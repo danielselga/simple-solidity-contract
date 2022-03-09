@@ -14,14 +14,18 @@ class Car {
     }
 }
 
+let car;
+
+beforeEach(function() { // To unblock scope variables
+    car = new Car()
+})
+
 describe('Car class', function() {
     it('can park', function() {
-        const car = new Car()
         assert.equal(car.park(), 'stopped')
     })
 
     it('can drive', function() {
-        const car = new Car()
         assert.equal(car.drive(), 'vrum')
     })
 })
